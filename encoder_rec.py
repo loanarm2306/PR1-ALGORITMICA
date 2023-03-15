@@ -29,12 +29,10 @@ def read_text():
 
 # Codificar el text de manera recursiva
 def encoder_rec(text1, text2):
-    letter_cont = 0
-    key_desp = 0
+    global encoded_text1, letter_cont, key_desp
 
     encoded_upper = []
     encoded_lower = []
-    encoded_text1 = []
     key_array = []
 
     encoded_upper = string.ascii_uppercase
@@ -49,7 +47,7 @@ def encoder_rec(text1, text2):
 
     # Cas base
     if len(text1) == 0:
-        return 0
+       return check_text(encoded_text1, text2)
     # Cas recursiu
     else:
         # Cas de la lletra sigui majúscula
@@ -72,9 +70,7 @@ def encoder_rec(text1, text2):
         else:
             encoded_text1.append(text1[0])
         
-        encoder_rec(text1[1:], text2)
-
-    check_text(encoded_text1, text2)
+        return encoder_rec(text1[1:], text2)
     
 
 # Verificar que el text del segon arxiu introduït sigui igual al obtingut després de xifrar
@@ -92,6 +88,11 @@ def check_text(encoded_text1, text2):
         
 
 if __name__ == '__main__':
+    global encoded_text1, letter_cont, key_desp
+    encoded_text1 = []
+    letter_cont = 0
+    key_desp = 0
+
     # Comprovar que el nombre de paràmetres d'entrada és igual a 4
     # [Nom de l'arxiu] [key] [plain_text.txt] [encoded_text.txt]
     if len(sys.argv) != 4:
@@ -101,7 +102,4 @@ if __name__ == '__main__':
         plain = sys.argv[2]
         encoded = sys.argv[3]
         read_text()
-        
-
-
-
+    
