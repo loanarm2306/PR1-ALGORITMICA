@@ -21,13 +21,13 @@ def read_text():
     print("Text codificat: ")
     print(text1)
 
-    print("Text que s'hauria de trobar al descodificar: ")
+    print("\nText que s'hauria de trobar al descodificar: ")
     print(text2)
 
     decoder(text1, text2)
 
 
-# Codificar el missatge
+# Descodificar el missatge
 def decoder(text1, text2):
     letter_cont = 0
     key_desp = 0
@@ -72,13 +72,13 @@ def decoder(text1, text2):
     check_text(decoded_text1, text2)
 
 
-# Verificar que el text del segon arxiu introduït sigui igual al obtingut després de xifrar
+# Verificar que el text del segon arxiu introduït sigui igual al obtingut després de descodificar
 def check_text(decoded_text1, text2):
     decoded_text1 = ''.join(decoded_text1)
-    print("Text descodificat per nosaltres: ")
+    print("\nText descodificat per nosaltres: ")
     print(decoded_text1)
 
-    print("Comprovació: ")
+    print("\nComprovació: ")
     if len(decoded_text1) == len(text2):
         if decoded_text1 == text2:
             print("El text1, ha sigut descodificat correctament!")

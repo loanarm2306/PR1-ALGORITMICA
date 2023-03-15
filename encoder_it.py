@@ -21,7 +21,7 @@ def read_text():
     print("Text original: ")
     print(text1)
 
-    print("Text que s'hauria d'obtenir al codificar: ")
+    print("\nText que s'hauria d'obtenir al codificar: ")
     print(text2)
 
     encoder(text1, text2)
@@ -75,10 +75,10 @@ def encoder(text1, text2):
 # Verificar que el text del segon arxiu introduït sigui igual al obtingut després de xifrar
 def check_text(encoded_text1, text2):
     encoded_text1 = ''.join(encoded_text1)
-    print("Text codificat per nosaltres: ")
+    print("\nText codificat per nosaltres: ")
     print(encoded_text1)
 
-    print("Comprovació: ")
+    print("\nComprovació: ")
     if len(encoded_text1) == len(text2):
         if encoded_text1 == text2:
             print("El text1, ha sigut codificat correctament!")
