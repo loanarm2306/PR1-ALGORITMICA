@@ -6,3 +6,5 @@
 import sys
 import string
 
+int __name__ == "__main__":
+

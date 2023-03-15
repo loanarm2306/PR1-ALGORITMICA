@@ -18,7 +18,7 @@ def read_text():
     file1.close()
     file2.close()
 
-    print("Text codificat: ")
+    print("\nText codificat: ")
     print(text1)
 
     print("\nText que s'hauria de trobar al descodificar: ")
