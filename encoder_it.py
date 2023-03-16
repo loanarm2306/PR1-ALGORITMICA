@@ -86,37 +86,6 @@ def check_text(encoded_text1, text2):
             print("Error, el text1 no s'ha codificat correctament!")
 
 
-# Aleatoriament generar una llista de caracters
-def random_list(length):
-    # Random integer list generator
-    import random
-    string.ascii_letters = list(range(length))
-    rand = random.choice(string.ascii_letters)
-    return rand
-
-
-# Calcular temps
-def calcular_temps(times):
-    import timeit
-    temps = []
-    for x in range(0, 1000, 10):
-        text1 = encoder(text1)
-        temps.append((x, timeit.timeit("encoder(random_list(" + str(x) + "))",
-                                       setup="from __main__ import encoder, random_list", number=times)))
-    return temps
-
-
-# Crear gràfica
-def crear_grafica(temps):
-    import matplotlib.pyplot as plt
-    x_list, y_list = map(list, zip(*temps))
-    plt.plot(x_list, y_list)
-    plt.xlabel('Longitud de la llista')
-    plt.ylabel('Temps (segons)')
-    plt.title('Temps d\'execució de la funció encoder')
-    plt.show()
-
-
 if __name__ == '__main__':
     # Comprovar que el nombre de paràmetres d'entrada és igual a 4
     # [Nom de l'arxiu] [key] [plain_text.txt] [encoded_text.txt]
