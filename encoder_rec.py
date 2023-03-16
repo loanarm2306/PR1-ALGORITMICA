@@ -97,9 +97,10 @@ if __name__ == '__main__':
     # [Nom de l'arxiu] [key] [plain_text.txt] [encoded_text.txt]
     if len(sys.argv) != 4:
         sys.exit('Usage: ' + sys.argv[0] + ' <key>' + ' <plain_text.txt>' + ' <encoded_text.txt>')
-    else:
-        key = sys.argv[1]
-        plain = sys.argv[2]
-        encoded = sys.argv[3]
-        read_text()
+
+    key = sys.argv[1]
+    plain = sys.argv[2]
+    encoded = sys.argv[3]
+    
+    read_text()
     
